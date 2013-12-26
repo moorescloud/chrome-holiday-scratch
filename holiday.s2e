@@ -1,0 +1,14 @@
+{ "extensionName": "Holiday",
+ "extensionPort": 19911,
+ "blockSpecs": [
+	[" ", "turn on light %n", "lightglobe", 0 ],
+	[" ", "turn off light %n", "darkglobe", 0 ],
+	[" ", "set red %n", "setred", 0 ],
+	[" ", "set green %n", "setgreen", 0 ],
+	[" ", "set blue %n", "setblue", 0 ],
+	["r", "get globe", "globe"],
+	["r", "get red", "red"],
+	["r", "get green", "green"],
+	["r", "get blue", "blue"]
+ ]
+}

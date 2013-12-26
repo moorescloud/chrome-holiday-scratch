@@ -1,0 +1,25 @@
+{
+  "name": "Scratch for Holiday",
+  "version": "2",
+  "manifest_version": 2,
+  "description": "Extention helper app to connect Scratch 2.0 to Holiday by MooresCloud",
+  "icons": {
+    "16": "icon-16.png",
+    "128": "icon-128.png"
+  },
+  "default_locale": "en",
+  "app": {
+    "background": {
+      "scripts": ["main.js"]
+    }
+  },
+  "permissions": [
+    {
+      "socket": [
+        "udp-send-to:*",
+        "tcp-connect",
+        "tcp-listen"
+      ]
+    }
+  ]
+}
