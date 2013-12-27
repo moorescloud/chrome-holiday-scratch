@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="styles/bootstrap.css">
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
+        <script src="jquery-2.0.3.min.js"></script>         
+        <script src="dns.js"></script> 
+        <script src="mdns.js"></script> 
         <script src="holiday.js"></script> 
         <script src="index.js"></script>
         <style>
@@ -63,18 +66,11 @@
     <body>
       <div class="hero-unit">
         <h1>Scratch for Holiday</h1>
-         <p><a href="http://scratch.mid.edu">Scratch 2.0</a> Extention helper app for<br/>
+         <p><a href="http://scratch.mid.edu">Scratch 2.0</a> Extension helper app for
           <a href="http://holiday.moorescloud.com">Holiday by MooresCloud</a></p>
          <p>
-           <!--<input type="file" webkitdirectory id="directory"/><br />-->
-           <select id="hosts">
-             <option value="127.0.0.1">lo - 127.0.0.1</option> 
-           </select>
-           <input type="text" id="port" value="19911"/><br />
-           <button id="start" class="btn btn-primary btn-large" enabled>Start</button>
-           <button id="stop" class="btn btn-warning btn-large"  disabled>Stop</button>
+          Select a Holiday: <select id="selector"></select>
          </p>
       </div>
-      <pre id="logger"></pre>
     </body>
 </html>

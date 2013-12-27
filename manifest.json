@@ -16,6 +16,7 @@
   "permissions": [
     {
       "socket": [
+        "udp-bind:*",
         "udp-send-to:*",
         "tcp-connect",
         "tcp-listen"

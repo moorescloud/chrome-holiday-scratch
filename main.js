@@ -3,7 +3,16 @@
  *
  * @see http://developer.chrome.com/apps/app.window.html
  */
-chrome.app.runtime.onLaunched.addListener(function() {
+chrome.app.runtime.onLaunched.addListener(function(intentData) {
+  chrome.app.window.create('index.html', {
+  	id: "mainwin",
+    bounds: {
+      width: 500,
+      height: 640
+    }
+  });
+});
+/*chrome.app.runtime.onLaunched.addListener(function() {
   /*var w = chrome.appWindow || chrome.app.window;
   w.create('main.html', {
     frame: 'chrome',
@@ -11,5 +20,5 @@ chrome.app.runtime.onLaunched.addListener(function() {
     minWidth: 440,
     minHeight: 200,
   });*/
-  window.open('index.html');
-});
+  /*window.open('index.html');
+});*/

@@ -1,8 +1,11 @@
+var hol = null;
+
 onload = function() {
   var start = document.getElementById("start");
   var stop = document.getElementById("stop");
-  var hosts = document.getElementById("hosts");
-  var port = document.getElementById("port");
+  //var hosts = document.getElementById("hosts");
+  //var hosts = "192.168.0.114"
+  var port = 19911
   var directory = document.getElementById("directory");
 
   var socket = chrome.socket;
@@ -28,7 +31,8 @@ onload = function() {
   };
 
   var logToScreen = function(log) {
-    logger.textContent += log + "\n";
+    //logger.textContent += log + "\n";
+    console.log(log);
   }
 
   var writeErrorResponse = function(socketId, errorCode, keepAlive) {
@@ -270,7 +274,7 @@ onload = function() {
     directory.disabled = true;
   };*/
 
-  start.onclick = function() {
+  /*start.onclick = function() {
     socket.create("tcp", {}, function(_socketInfo) {
       socketInfo = _socketInfo;
       socket.listen(socketInfo.socketId, hosts.value, parseInt(port.value), 50, function(result) {
@@ -299,13 +303,36 @@ onload = function() {
       opt.innerText = interface.name + " - " + interface.address;
       hosts.appendChild(opt);
     }
+  });*/
+
+  // And here's the stuff we do.
+
+  var sketch_globe = 1;
+  var sketch_red = 0;
+  var sketch_green = 0;
+  var sketch_blue = 0;
+
+  // Set up the listener socket thingy to listen to the localhost port
+  // Since that's where Scratch will be sending its requests to.
+  socket.create("tcp", {}, function(_socketInfo) {
+    socketInfo = _socketInfo;
+    socket.listen(socketInfo.socketId, "127.0.0.1", port, 50, function(result) {
+      console.log("LISTENING:", result);
+      socket.accept(socketInfo.socketId, onAccept);
+    });
+  });
+
+  // Bind a selector change thingy
+  $("#selector").change(function() {
+    console.log("changed to: ", $("#selector").val());
+    if (hol != null) {
+      console.log("Changing holidays");
+      hol.closeSocket();
+      hol = new Holiday($("#selector").val());
+    }
   });
 
 };
 
-var sketch_globe = 1;
-var sketch_red = 0;
-var sketch_green = 0;
-var sketch_blue = 0;
-var hol = new Holiday("192.168.0.119");
+
 
