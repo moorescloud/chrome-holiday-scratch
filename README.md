@@ -13,7 +13,7 @@ Usage
 -----
 
 * Download the Scratch 2.0 offline editor (Mac and PC only, sorry) from http://wiki.scratch.mit.edu/wiki/Scratch_2.0_Offline_Editor
-* Download the Scratch for Holiday examples here.
+* Download the Scratch for Holiday examples from https://s3-ap-southeast-2.amazonaws.com/scratch-for-holiday/Scratch+for+Holiday.zip
 * Install the Scratch for Holiday extension from the Chrome Web Store. 
 * Launch the extension.
 * Scratch for Holiday will scan your network for Holidays. 
