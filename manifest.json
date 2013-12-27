@@ -1,12 +1,11 @@
 {
   "name": "Scratch for Holiday",
-  "version": "2",
+  "version": "0.1",
   "manifest_version": 2,
   "description": "Extention helper app to connect Scratch 2.0 to Holiday by MooresCloud",
-  "icons": {
-    "16": "icon-16.png",
-    "128": "icon-128.png"
-  },
+  "icons": { 
+    "128": "img/holiday-114x114.png", 
+    "16": "img/holiday-57x57.png" },
   "default_locale": "en",
   "app": {
     "background": {
